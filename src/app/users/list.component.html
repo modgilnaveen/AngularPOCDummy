@@ -1,0 +1,34 @@
+<a routerLink="add" class="btn btn-sm btn-success mb-2">Add Loan Borrower</a>
+<br><br>
+<div *ngIf="users.length > 0">
+    <h5>Loan Borrower Details:</h5>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th style="width: 30%">Borrower First Name</th>
+            <th style="width: 30%">Borrower Last Name</th>
+            <th style="width: 30%">Loan Amount</th>
+            <th style="width: 10%"></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of users">
+            <td>{{user.firstName}}</td>
+            <td>{{user.lastName}}</td>
+            <td>{{user.loanAmount}}</td>
+            <td style="white-space: nowrap">
+                <a routerLink="edit/{{user.id}}" class="btn btn-sm btn-primary mr-1">Edit</a>&nbsp;
+                <button (click)="deleteUser(user.id)" class="btn btn-sm btn-danger btn-delete-user" [disabled]="user.isDeleting">
+                    <span *ngIf="user.isDeleting" class="spinner-border spinner-border-sm"></span>
+                    <span *ngIf="!user.isDeleting">Delete</span>
+                </button>
+            </td>
+        </tr>
+        <tr *ngIf="!users">
+            <td colspan="4" class="text-center">
+                <span class="spinner-border spinner-border-lg align-center"></span>
+            </td>
+        </tr>
+    </tbody>
+</table>
+</div>
