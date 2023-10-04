@@ -17,7 +17,7 @@ export class ListComponent implements OnInit {
             .subscribe(users => {
                 let borrowerList = users
                 this.users = borrowerList.filter(x => x.loanAmount !== undefined);
-                this.userList = [...this.users]
+                this.userList = this.users;
             }) ;
     }
 
@@ -27,7 +27,7 @@ export class ListComponent implements OnInit {
         this.accountService.delete(id)
             .pipe(first())
             .subscribe(() => {
-                this.users = this.users && this.users.filter(x => x.id !== id);                
+                this.users = this.users && this.users.filter(x => x.id !== id) 
             });
     }
 
