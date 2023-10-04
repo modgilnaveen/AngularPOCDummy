@@ -1,28 +1,40 @@
-<h4 *ngIf="isAddMode">Add Loan Borrower Detail</h4>
-<h4 *ngIf="!isAddMode">Edit Loan Borrower Detail</h4>
+<h4 *ngIf="isAddMode">Add Loan Borrower Detail:</h4>
+<h4 *ngIf="!isAddMode">Edit Loan Borrower Detail:</h4>
 <form [formGroup]="form" (ngSubmit)="onSubmit()">
     <div class="form-row">
         <div class="form-group col">
-            <label for="firstName">Borrower First Name<span style="color:red">*</span></label>
+            <label for="firstName">First Name<span style="color:red">*</span></label>
             <input type="text" formControlName="firstName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
             <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
-                <div *ngIf="f.firstName.errors.required">Borrower First Name is required</div>
+                <div *ngIf="f.firstName.errors.required">First Name is required</div>
             </div>
         </div>
         <div class="form-group col">
-            <label for="lastName">Borrower Last Name<span style="color:red">*</span></label>
+            <label for="lastName">Last Name<span style="color:red">*</span></label>
             <input type="text" formControlName="lastName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
             <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
-                <div *ngIf="f.lastName.errors.required">Borrower Last Name is required</div>
+                <div *ngIf="f.lastName.errors.required">Last Name is required</div>
             </div>
         </div>
-    </div>
-    <div class="form-row">
+        <div class="form-group col">
+            <label for="loanNumber">Loan Number<span style="color:red">*</span></label>
+            <input type="text" formControlName="loanNumber" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.loanNumber.errors }" />
+            <div *ngIf="submitted && f.loanNumber.errors" class="invalid-feedback">
+                <div *ngIf="f.loanNumber.errors.required">Loan Number is required</div>
+            </div>
+        </div>
         <div class="form-group col">
             <label for="loanAmount">Loan Amount<span style="color:red">*</span></label>
             <input type="number" formControlName="loanAmount" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.loanAmount.errors }" />
             <div *ngIf="submitted && f.loanAmount.errors" class="invalid-feedback">
-                <div *ngIf="f.loanAmount.errors.required">Borrower Loan Amoumt</div>
+                <div *ngIf="f.loanAmount.errors.required">Loan Amount is required</div>
+            </div>
+        </div>
+        <div class="form-group col">
+            <label for="loanPropertyAddress">Property Address<span style="color:red">*</span></label>
+            <input type="text" formControlName="loanPropertyAddress" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.loanPropertyAddress.errors }" />
+            <div *ngIf="submitted && f.loanPropertyAddress.errors" class="invalid-feedback">
+                <div *ngIf="f.loanPropertyAddress.errors.required">Property Address is required</div>
             </div>
         </div>
     </div>

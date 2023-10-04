@@ -28,7 +28,9 @@ export class AddEditComponent implements OnInit {
         this.form = this.formBuilder.group({
             firstName: ['', Validators.required],
             lastName: ['', Validators.required],
-            loanAmount: ['', Validators.required]
+            loanNumber: ['', Validators.required],
+            loanAmount: ['', Validators.required],
+            loanPropertyAddress: ['', Validators.required]
         });
 
         if (!this.isAddMode) {
@@ -38,7 +40,9 @@ export class AddEditComponent implements OnInit {
                 .subscribe(x => {
                     this.f['firstName'].setValue(x.firstName);
                     this.f['lastName'].setValue(x.lastName);
+                    this.f['loanNumber'].setValue(x.loanNumber);
                     this.f['loanAmount'].setValue(x.loanAmount);
+                    this.f['loanPropertyAddress'].setValue(x.loanPropertyAddress);
                 });
         }
     }
