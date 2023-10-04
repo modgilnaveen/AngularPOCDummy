@@ -1,5 +1,8 @@
 <a routerLink="add" class="btn btn-sm btn-success mb-2">Add Loan Borrower</a>
 <br><br>
+<p>
+    <input type="search" style="width:30%" placeholder= "Search by First Name or Last Name" (input)="onInput($event)"/>
+</p>
 <div *ngIf="users.length > 0">
     <h5>Loan Borrower Details:</h5>
 <table class="table table-striped">
