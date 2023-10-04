@@ -6,4 +6,6 @@ export class User {
     lastName: string | undefined;
     token: string | undefined;
     loanAmount: number | undefined;
+    loanNumber: string | undefined;
+    loanPropertyAddress: string | undefined;
 }
