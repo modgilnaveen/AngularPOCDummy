@@ -12,6 +12,7 @@ export class AddEditComponent implements OnInit {
     isAddMode: boolean | undefined;
     loading = false;
     submitted = false;
+    loggedUser: any;
 
     constructor(
         private formBuilder: FormBuilder,
@@ -22,6 +23,7 @@ export class AddEditComponent implements OnInit {
     ) {}
 
     ngOnInit() {
+        this.loggedUser = localStorage.getItem('loggedUser');
         this.id = this.route.snapshot.params['id'];
         this.isAddMode = !this.id;
 

@@ -1,5 +1,10 @@
-<h4 *ngIf="isAddMode">Add Loan Borrower Detail:</h4>
-<h4 *ngIf="!isAddMode">Edit Loan Borrower Detail:</h4>
+<div class="row">
+    <div class="col-md-4">
+        <h4 *ngIf="isAddMode">Add Loan Borrower Detail:</h4>
+        <h4 *ngIf="!isAddMode">Edit Loan Borrower Detail:</h4>
+    </div>
+    <div class="col-md-8" style="text-align:right"><b>User:   {{loggedUser}}</b></div>
+</div>
 <form [formGroup]="form" (ngSubmit)="onSubmit()">
     <div class="form-row">
         <div class="form-group col">

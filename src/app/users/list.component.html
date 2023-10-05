@@ -1,6 +1,8 @@
-<div style="text-align:right"><b>User:  {{loggedUser}}</b></div>
-<a routerLink="add" class="btn btn-sm btn-success mb-2">Add Loan Borrower</a>
-<br><br>
+<div class="row">
+    <div class="col-md-4"><a routerLink="add" class="btn btn-sm btn-success mb-2">Add Loan Borrower</a></div>
+    <div class="col-md-8" style="text-align:right"><b>User:  {{loggedUser}}</b></div>
+</div>
+<br>
 <div><input type="search" style="width:30%" placeholder= "Search by First Name or Last Name" (input)="onInput($event)"/>
 </div>
 <div *ngIf="users.length > 0">
