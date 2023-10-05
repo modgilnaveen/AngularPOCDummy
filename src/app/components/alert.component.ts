@@ -26,7 +26,7 @@ export class AlertComponent implements OnInit, OnDestroy {
                     this.alerts = this.alerts.filter(x => x.keepAfterRouteChange);
 
                     // remove 'keepAfterRouteChange' flag on the rest
-                   // this.alerts.forEach(x => delete x.keepAfterRouteChange);
+                    this.alerts.forEach(x => delete x.keepAfterRouteChange);
                     return;
                 }
 
@@ -59,7 +59,7 @@ export class AlertComponent implements OnInit, OnDestroy {
 
         if (this.fade) {
             // fade out alert
-           // this.alerts?.find(x => x === alert )?.fade = true;            
+            this.alerts.find(x => x === alert ).fade = true;            
 
             // remove alert after faded out
             setTimeout(() => {
@@ -72,7 +72,7 @@ export class AlertComponent implements OnInit, OnDestroy {
     }
 
     cssClass(alert: Alert) {
-        if (!alert) return;
+        if (!alert) return 0;
 
         const classes = ['alert', 'alert-dismissable', 'mt-4', 'container'];
                 
