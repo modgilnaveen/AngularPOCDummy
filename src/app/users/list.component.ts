@@ -8,10 +8,12 @@ export class ListComponent implements OnInit {
     users : any[] = [];
     searchUser : any[] = [];
     userList: any[]= [];
+    loggedUser: any;
 
     constructor(private accountService: AccountService) {}
 
     ngOnInit() {
+        this.loggedUser = localStorage.getItem('loggedUser');
         this.accountService.getAll()
             .pipe(first())
             .subscribe(users => {
