@@ -54,6 +54,8 @@ export class LoginComponent implements OnInit {
             .pipe(first())
             .subscribe(
                 data => {
+                    const loggedUser = data.firstName +' '+ data.lastName;
+                    localStorage.setItem('loggedUser', loggedUser);
                     this.returnUrl = this.returnUrl + 'users';
                     this.router.navigate([this.returnUrl]);
                 },
