@@ -5,7 +5,9 @@ export class User {
     firstName: string | undefined;
     lastName: string | undefined;
     token: string | undefined;
-    loanAmount: number | undefined;
+    loanType: string | undefined;    
     loanNumber: string | undefined;
+    loanAmount: number | undefined;
+    loanTerm: number | undefined;
     loanPropertyAddress: string | undefined;
 }
